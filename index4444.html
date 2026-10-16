@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oportunidade – Renda Extra com sua Conta Digital</title>
+
+  <!-- (Meta Pixel removido – página visual, sem telemetria) -->
+  <meta name="description"
+    content="Descubra como gerar renda extra usando sua conta digital 99Pay de forma simples e segura.">
+  <meta property="og:title" content="Oportunidade – Renda Extra com sua Conta Digital">
+  <meta property="og:description" content="Metodo simples para gerar renda extra com sua conta 99Pay.">
+  <meta property="og:type" content="website">
+  <link rel="icon"
+    href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' rx='6' fill='%23FFD600'/&gt;&lt;text x='16' y='22' text-anchor='middle' font-family='Arial Black,Arial' font-weight='900' font-size='16' fill='%23212121'&gt;99&lt;/text&gt;&lt;/svg&gt;">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="/introducao/fonts.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+    /* ========== 1. RESET ========== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      overflow-x: hidden
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto
+    }
+
+    ul,
+    ol {
+      list-style: none
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+      border: none;
+      background: none
+    }
+
+    /* ========== 2. DESIGN TOKENS ========== */
+    :root {
+      --color-primary: #F97316;
+      --color-primary-hover: #EA580C;
+      --color-accent: #FFD600;
+      --color-bg: #FAFAFA;
+      --color-surface: #FFFFFF;
+      --color-text: #1A1A1A;
+      --color-muted: #6B7280;
+      --color-border: #E5E7EB;
+      --color-success: #16A34A;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, .06);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, .08);
+      --shadow-lg: 0 12px 40px rgba(0, 0, 0, .12);
+      --container-width: 1140px;
+      --header-height: 64px;
+      --font-size-h1: clamp(1.75rem, 4vw, 2.75rem);
+      --font-size-h2: clamp(1.5rem, 3vw, 2.25rem);
+      --font-size-body: clamp(0.938rem, 1.5vw, 1.125rem);
+      --font-size-small: clamp(0.813rem, 1.2vw, 0.938rem);
+      --space-section: clamp(3rem, 8vw, 6rem);
+    }
+
+    /* ========== 3. LAYOUT ========== */
+    .container {
+      width: min(var(--container-width), calc(100% - 40px));
+      margin-inline: auto
+    }
+
+    /* ========== 4. HEADER ========== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      border-bottom: 1px solid #e5e5e5;
+      box-shadow: var(--shadow-sm)
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px
+    }
+
+    .site-logo svg {
+      height: 32px;
+      width: 104px
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .header-links {
+      display: none;
+      align-items: center;
+      gap: 0
+    }
+
+    .header-links a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 14px;
+      height: 64px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #212121;
+      transition: background .2s
+    }
+
+    .header-links a:hover {
+      background: #f5f5f5
+    }
+
+    .header-links .link-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid #F97316;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .header-links .link-icon i {
+      font-size: 12px;
+      color: #F97316
+    }
+
+    .header-cta {
+      background: #F97316;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: 16px;
+      transition: background .2s, transform .2s;
+      white-space: nowrap
+    }
+
+    .header-cta:hover {
+      background: #ea580c;
+      transform: translateY(-1px)
+    }
+
+    .header-search {
+      width: 32px;
+      height: 32px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer
+    }
+
+    .header-search svg {
+      width: 24px;
+      height: 24px
+    }
+
+    /* HAMBURGER MENU */
+    .hamburger {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      border: none;
+      background: none;
+      padding: 0
+    }
+
+    .hamburger i {
+      font-size: 22px;
+      color: #212121
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 85%;
+      max-width: 320px;
+      height: 100vh;
+      background: #fff;
+      z-index: 9999;
+      transition: right .3s ease;
+      box-shadow: -4px 0 24px rgba(0, 0, 0, .1);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto
+    }
+
+    .mobile-menu.open {
+      right: 0
+    }
+
+    .mobile-menu-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .5);
+      z-index: 9998;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .3s, visibility .3s
+    }
+
+    .mobile-menu-overlay.open {
+      opacity: 1;
+      visibility: visible
+    }
+
+    .mobile-menu-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      border-bottom: 1px solid #e5e5e5;
+      flex-shrink: 0
+    }
+
+    .mobile-menu-header svg {
+      height: 28px;
+      width: 104px
+    }
+
+    .mobile-menu-close {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      background: none
+    }
+
+    .mobile-menu-close i {
+      font-size: 20px;
+      color: #212121
+    }
+
+    .mobile-menu-links {
+      display: flex;
+      flex-direction: column;
+      padding: 24px 16px;
+      gap: 0;
+      flex-shrink: 0
+    }
+
+    .mobile-menu-links a {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 12px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #212121;
+      transition: background .2s
+    }
+
+    .mobile-menu-links a:hover,
+    .mobile-menu-links a:active {
+      background: #f5f5f5
+    }
+
+    .mobile-menu-links a .link-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .mobile-menu-links a .link-icon i {
+      font-size: 14px;
+      color: var(--color-primary)
+    }
+
+    .mobile-menu-cta {
+      padding: 24px;
+      flex-shrink: 0
+    }
+
+    .mobile-menu-cta a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-primary);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 16px 24px;
+      border-radius: 16px;
+      width: 100%;
+      transition: background .2s
+    }
+
+    .mobile-menu-cta a:hover {
+      background: var(--color-primary-hover)
+    }
+
+    @media(min-width:1024px) {
+      .hamburger {
+        display: none
+      }
+    }
+
+    @media(max-width:1023px) {
+      .header-links {
+        display: none !important
+      }
+
+      .header-search {
+        display: none !important
+      }
+    }
+
+    .breadcrumb {
+      background: #fff;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 6px 0;
+      font-size: 12px;
+      color: var(--color-muted)
+    }
+
+    .breadcrumb a {
+      text-decoration: underline;
+      transition: color .2s
+    }
+
+    .breadcrumb a:hover {
+      color: var(--color-primary)
+    }
+
+    .breadcrumb .current {
+      font-weight: 700;
+      color: var(--color-text)
+    }
+
+    .breadcrumb-line {
+      display: block;
+      height: 3px;
+      background: linear-gradient(90deg, #FFD600, #F97316, #DC2626);
+      margin-top: 6px
+    }
+
+    @media(min-width:1024px) {
+      .header-links {
+        display: flex
+      }
+
+      .header-search {
+        display: flex
+      }
+    }
+
+    /* ========== NOTICE BAR ========== */
+    .notice-bar {
+      background: #FEF3C7;
+      border-bottom: 1px solid #FDE68A;
+      padding: 8px 0;
+      text-align: center;
+      font-size: .75rem;
+      color: #92400E;
+      font-weight: 500
+    }
+
+    /* ========== 5. HERO ========== */
+    .hero {
+      padding: var(--space-section) 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem
+    }
+
+    .hero-content h1 {
+      font-size: var(--font-size-h1);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -.02em;
+      color: var(--color-text)
+    }
+
+    .hero-content h1 strong {
+      color: var(--color-primary)
+    }
+
+    .hero-content p {
+      font-size: var(--font-size-body);
+      color: var(--color-muted);
+      max-width: 520px;
+      line-height: 1.7
+    }
+
+    .hero-btn-desktop {
+      display: none !important
+    }
+
+    .hero-btn-mobile {
+      display: flex !important;
+      width: 100%;
+      justify-content: center
+    }
+
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(2rem, 5vw, 3.5rem);
+      position: relative;
+      min-height: 280px
+    }
+
+    .hero-visual::before {
+      content: '';
+      position: absolute;
+      width: 85%;
+      height: 90%;
+      background: #FFD600;
+      border-radius: 32px;
+      transform: rotate(-4deg);
+      top: 5%;
+      left: 8%;
+      z-index: 0
+    }
+
+    .hero-visual::after {
+      content: '';
+      position: absolute;
+      width: 80%;
+      height: 85%;
+      background: #F59E0B;
+      border-radius: 28px;
+      transform: rotate(3deg);
+      top: 8%;
+      left: 12%;
+      z-index: 0
+    }
+
+    .hero-bg-layer {
+      position: absolute;
+      width: 75%;
+      height: 80%;
+      background: linear-gradient(135deg, #F97316, #EA580C);
+      border-radius: 24px;
+      transform: rotate(-1deg);
+      top: 10%;
+      left: 14%;
+      z-index: 0
+    }
+
+    .phone-frame {
+      position: relative;
+      width: clamp(220px, 50%, 300px);
+      border-radius: clamp(24px, 3vw, 32px);
+      overflow: hidden;
+      box-shadow: 0 32px 64px rgba(0, 0, 0, .3), 0 8px 20px rgba(0, 0, 0, .15);
+      border: 5px solid #1a1a1a;
+      z-index: 2
+    }
+
+    .phone-frame::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 18px;
+      background: #1a1a1a;
+      border-radius: 0 0 10px 10px;
+      z-index: 3
+    }
+
+    .phone-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transform: scale(1.5);
+      transform-origin: center 30%
+    }
+
+    /* ========== 6. SECTIONS ========== */
+    .content-section {
+      padding: var(--space-section) 0
+    }
+
+    .section-split {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: center
+    }
+
+    .section-img {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md)
+    }
+
+    .section-img img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover
+    }
+
+    .section-img::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--color-accent), var(--color-primary))
+    }
+
+    .section-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem
+    }
+
+    .section-text h2 {
+      font-size: var(--font-size-h2);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -.015em
+    }
+
+    .section-text p {
+      font-size: var(--font-size-body);
+      color: var(--color-muted);
+      line-height: 1.75
+    }
+
+    .section-text .highlight {
+      font-weight: 700;
+      color: var(--color-text)
+    }
+
+    /* ========== 7. CARDS/STEPS ========== */
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem
+    }
+
+    .step-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 14px 18px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      transition: transform .2s, box-shadow .2s
+    }
+
+    .step-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md)
+    }
+
+    .step-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      background: var(--color-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-weight: 800;
+      font-size: .875rem;
+      color: var(--color-text)
+    }
+
+    .step-icon svg {
+      width: 18px;
+      height: 18px
+    }
+
+    .step-label {
+      font-size: var(--font-size-small);
+      font-weight: 600;
+      color: var(--color-text)
+    }
+
+    /* ========== 8. CTA ========== */
+    .cta-section {
+      padding: var(--space-section) 0
+    }
+
+    .cta-box {
+      background: var(--color-text);
+      border-radius: var(--radius-lg);
+      padding: clamp(2.5rem, 6vw, 4rem);
+      text-align: center;
+      box-shadow: var(--shadow-lg)
+    }
+
+    .cta-box h2 {
+      font-size: var(--font-size-h2);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: .75rem
+    }
+
+    .cta-box p {
+      font-size: var(--font-size-body);
+      color: var(--color-muted);
+      margin-bottom: 1.75rem
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: .75rem;
+      background: #FFD600;
+      color: #1A1A1A;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 18px 42px;
+      border-radius: var(--radius-full);
+      transition: all .3s cubic-bezier(.4, 0, .2, 1);
+      box-shadow: 0 6px 24px rgba(255, 214, 0, .3);
+      position: relative;
+      overflow: hidden
+    }
+
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .3), transparent);
+      transform: skewX(-20deg);
+      transition: left .5s ease
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 10px 36px rgba(255, 214, 0, .4)
+    }
+
+    .btn-primary:hover::after {
+      left: 120%
+    }
+
+    .btn-primary:focus-visible {
+      outline: 3px solid var(--color-primary);
+      outline-offset: 3px
+    }
+
+    .btn-primary:active {
+      transform: translateY(0) scale(.98)
+    }
+
+    /* ========== 9. FOOTER ========== */
+    .site-footer {
+      background: var(--color-accent);
+      padding: 64px 0 0;
+      position: relative
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding: 0 20px;
+      max-width: var(--container-width);
+      margin: 0 auto
+    }
+
+    .footer-brand-col {
+      display: flex;
+      flex-direction: column;
+      gap: 24px
+    }
+
+    .footer-brand-col svg {
+      height: 60px;
+      width: auto
+    }
+
+    .footer-social-label {
+      font-size: .875rem;
+      color: var(--color-text)
+    }
+
+    .footer-social-icons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap
+    }
+
+    .footer-social-icons a {
+      width: 32px;
+      height: 32px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #fff;
+      transition: border-color .3s, transform .3s
+    }
+
+    .footer-social-icons a:hover {
+      border-color: var(--color-accent);
+      transform: scale(1.1)
+    }
+
+    .footer-social-icons a i {
+      font-size: 14px;
+      color: var(--color-text)
+    }
+
+    .footer-btn {
+      display: inline-flex;
+      align-items: center;
+      background: var(--color-text);
+      color: #fff;
+      font-size: .875rem;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 16px;
+      width: max-content;
+      transition: background .2s
+    }
+
+    .footer-btn:hover {
+      background: #333
+    }
+
+    .footer-links-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px
+    }
+
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 8px
+    }
+
+    .footer-col a {
+      font-size: .875rem;
+      color: var(--color-text);
+      transition: opacity .2s
+    }
+
+    .footer-col a:hover {
+      opacity: .7
+    }
+
+    .footer-bottom {
+      background: var(--color-text);
+      border-top: 3px solid #C4A500;
+      padding: 16px 20px;
+      text-align: center;
+      margin-top: 48px
+    }
+
+    .footer-bottom p {
+      font-size: .6875rem;
+      color: rgba(255, 255, 255, .8);
+      line-height: 1.6
+    }
+
+    @media(min-width:768px) {
+      .footer-grid {
+        grid-template-columns: 250px 1fr;
+        gap: 48px;
+        padding: 0 40px
+      }
+
+      .footer-links-grid {
+        grid-template-columns: 1fr 1fr 1fr
+      }
+    }
+
+    @media(min-width:1024px) {
+      .footer-grid {
+        grid-template-columns: 280px 1fr;
+        gap: 64px;
+        padding: 0 64px
+      }
+
+      .footer-brand-col svg {
+        height: 80px
+      }
+
+      .footer-col a {
+        font-size: 1rem
+      }
+    }
+
+    .disclaimer {
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: .6875rem;
+      color: var(--color-muted);
+      line-height: 1.8;
+      background: var(--color-bg)
+    }
+
+    /* ========== 10. FLOATING CTA ========== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 16px;
+      width: 52px;
+      height: 52px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, .4);
+      z-index: 98;
+      transition: transform .3s, box-shadow .3s
+    }
+
+    .whatsapp-float i {
+      font-size: 26px;
+      color: #fff
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 24px rgba(37, 211, 102, .5)
+    }
+
+    .whatsapp-float:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: 3px
+    }
+
+    @media(max-width:767px) {
+      .whatsapp-float {
+        bottom: 76px;
+        right: 12px;
+        width: 48px;
+        height: 48px
+      }
+
+      .whatsapp-float i {
+        font-size: 22px
+      }
+    }
+
+    .floating-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, .97);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid var(--color-border);
+      padding: 10px 20px;
+      z-index: 99;
+      transform: translateY(100%);
+      transition: transform .3s ease;
+      text-align: center
+    }
+
+    .floating-cta.visible {
+      transform: translateY(0)
+    }
+
+    .floating-cta a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      background: var(--color-primary);
+      color: #fff;
+      font-size: .875rem;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: var(--radius-md);
+      max-width: 360px;
+      margin: 0 auto;
+      box-shadow: 0 2px 12px rgba(249, 115, 22, .2)
+    }
+
+    /* ========== 11. RESPONSIVE ========== */
+    @media(min-width:768px) {
+      .hero {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem
+      }
+
+      .hero-btn-desktop {
+        display: inline-flex !important
+      }
+
+      .hero-btn-mobile {
+        display: none !important
+      }
+
+      .section-split {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem
+      }
+
+      .section-split.reverse {
+        direction: rtl
+      }
+
+      .section-split.reverse>* {
+        direction: ltr
+      }
+    }
+
+    @media(min-width:1024px) {
+      .hero {
+        gap: 4rem
+      }
+
+      .section-split {
+        gap: 4rem
+      }
+    }
+
+    @media(max-width:767px) {
+      .floating-cta.visible {
+        transform: translateY(0)
+      }
+
+      body {
+        padding-bottom: 70px
+      }
+    }
+
+    @media(min-width:768px) {
+      .floating-cta {
+        display: none !important
+      }
+    }
+
+    /* ========== 12. ACCESSIBILITY ========== */
+    @media(prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important
+      }
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--color-primary);
+      outline-offset: 2px;
+      border-radius: 4px
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0
+    }
+  </style>
+<!-- Meta Pixel Code (fornecido pelo professor para este dominio) -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1776759036856667');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+</head>
+
+<body>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1776759036856667&ev=PageView&noscript=1"
+/></noscript>
+
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="site-logo" aria-label="99PAY">
+        <svg viewBox="0 0 104 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M14.4821 8.66857C14.4831 9.28507 14.3062 9.888 13.9736 10.4011C13.6411 10.9142 13.1679 11.3144 12.614 11.551C12.0601 11.7877 11.4503 11.8501 10.8618 11.7305C10.2734 11.6109 9.73263 11.3146 9.30811 10.879C8.88355 10.4435 8.59424 9.88831 8.47684 9.28379C8.35941 8.67922 8.41909 8.05245 8.6484 7.48277C8.87768 6.91313 9.26627 6.42615 9.76494 6.08351C10.2636 5.74088 10.85 5.55793 11.4499 5.55789C11.8477 5.5575 12.2418 5.63766 12.6095 5.7938C12.9772 5.94989 13.3114 6.17893 13.593 6.46779C13.8745 6.75664 14.098 7.09967 14.2505 7.47731C14.4031 7.85491 14.4818 8.25971 14.4821 8.66857ZM18.4779 13.482C19.4072 12.0585 19.9023 10.3827 19.9 8.66857C19.9 3.88069 16.1169 0 11.4499 0C6.78293 0 3 3.88069 3 8.66857C3 12.8019 5.82122 16.2577 9.59472 17.1253L4.76206 24.5474C4.73077 24.5954 4.71279 24.6514 4.71003 24.7091C4.70728 24.7669 4.71987 24.8244 4.74643 24.8753C4.77301 24.9263 4.81257 24.9689 4.86088 24.9986C4.9092 25.0282 4.96446 25.0438 5.02074 25.0437H10.9491L18.4435 13.5349C18.4542 13.5183 18.4648 13.5017 18.4755 13.4845L18.4779 13.482ZM32.7324 8.66857C32.7334 9.28507 32.5564 9.88804 32.2239 10.4011C31.8913 10.9142 31.4181 11.3144 30.8642 11.5511C30.3102 11.7877 29.7004 11.8501 29.1119 11.7305C28.5235 11.6108 27.9827 11.3145 27.5582 10.8789C27.1337 10.4433 26.8444 9.88808 26.727 9.28351C26.6097 8.67891 26.6694 8.05214 26.8988 7.4825C27.1281 6.91282 27.5168 6.42587 28.0155 6.08328C28.5142 5.74068 29.1007 5.55785 29.7006 5.55789C30.504 5.55723 31.2748 5.8846 31.8433 6.46794C32.4119 7.05132 32.7317 7.84289 32.7324 8.66857ZM36.7284 13.482C37.6573 12.0585 38.1523 10.3826 38.1499 8.66857C38.1499 3.88069 34.3672 0 29.7006 0C25.034 0 21.251 3.88069 21.251 8.66857C21.251 12.8019 24.0715 16.2577 27.8457 17.1253L23.0123 24.5474C22.9811 24.5955 22.9633 24.6514 22.9606 24.7091C22.9579 24.7668 22.9705 24.8242 22.9971 24.8752C23.0237 24.9261 23.0632 24.9687 23.1114 24.9984C23.1597 25.0281 23.2149 25.0437 23.2711 25.0437H29.2L36.6941 13.5349C36.705 13.5183 36.7155 13.5017 36.7265 13.4845L36.7284 13.482ZM55.7221 9.37479C55.7224 9.78353 55.6444 10.1883 55.4925 10.566C55.3406 10.9437 55.1176 11.287 54.8367 11.5762C54.5557 11.8654 54.2222 12.0949 53.8546 12.2516C53.4873 12.4083 53.0938 12.489 52.6961 12.4893H48.2883V6.26029H52.6961C53.499 6.26096 54.2692 6.58942 54.8367 7.1735C55.4042 7.75758 55.7228 8.54939 55.7221 9.37479ZM61.1292 9.37479C61.1292 4.58119 57.3535 0.695368 52.6961 0.695368H42.8798V25.0437H48.2883V18.0542H52.6961C57.3535 18.0542 61.1292 14.1684 61.1292 9.37479ZM73.6301 16.3522C73.6295 17.0389 73.4303 17.71 73.0585 18.2805C72.6864 18.8511 72.1582 19.2955 71.5407 19.5577C70.9231 19.8198 70.2438 19.888 69.5883 19.7534C68.9331 19.6189 68.3314 19.2877 67.8592 18.8018C67.3869 18.3159 67.0652 17.6971 66.9354 17.0234C66.8053 16.3498 66.8723 15.6517 67.1284 15.0173C67.3842 14.3829 67.8174 13.8407 68.3728 13.4592C68.9286 13.0777 69.582 12.8741 70.25 12.874C71.1472 12.8746 72.007 13.2414 72.6412 13.8937C73.2749 14.546 73.6308 15.4303 73.6301 16.3522ZM76.6558 25.0437H79.7125V7.65296H76.6558C76.556 7.65284 76.4573 7.67758 76.3689 7.725C76.2802 7.77245 76.2039 7.84117 76.147 7.92535L75.3993 9.02392C74.0872 8.04738 72.5376 7.46287 70.9224 7.33495C69.3069 7.20706 67.6886 7.5408 66.2464 8.29924C64.8042 9.05768 63.5939 10.2113 62.7499 11.6325C61.9059 13.0537 61.4606 14.6871 61.4637 16.3522C61.4637 21.3467 65.3976 25.3959 70.25 25.3959C72.1016 25.3986 73.906 24.797 75.4031 23.6778L76.147 24.7713C76.2043 24.8554 76.2802 24.9241 76.3689 24.9715C76.4576 25.0189 76.556 25.0437 76.6558 25.0437ZM100 7.65296H94.5359C94.414 7.65292 94.2949 7.68983 94.1935 7.75906C94.0916 7.82825 94.0122 7.92671 93.9649 8.04211L90.5368 16.3522L87.1097 8.04211C87.0621 7.92667 86.9827 7.82825 86.8808 7.75902C86.779 7.68983 86.6599 7.65292 86.5381 7.65296H81.0746L87.5995 23.4743L84.2653 31.556C84.2453 31.6046 84.2377 31.6574 84.2425 31.7099C84.247 31.7623 84.2646 31.8128 84.2929 31.8567C84.3212 31.9006 84.3595 31.9367 84.4047 31.9617C84.4496 31.9867 84.5004 31.9998 84.5515 32H89.9572L100 7.65296Z"
+            fill="#212121"></path>
+        </svg>
+      </a>
+      <div class="header-right">
+        <div class="header-links">
+          <a href="#">
+            <div class="link-icon"><i class="fa-solid fa-user"></i></div><span>Conta Remunerada</span>
+          </a>
+          <a href="#">
+            <div class="link-icon"><i class="fa-solid fa-dollar-sign"></i></div><span>Emprestimo</span>
+          </a>
+          <a href="#">
+            <div class="link-icon"><i class="fa-solid fa-mobile-screen"></i></div><span>Investimentos</span>
+          </a>
+          <a href="#">
+            <div class="link-icon"><i class="fa-solid fa-circle-info"></i></div><span>Sobre a 99Pay</span>
+          </a>
+        </div>
+        <a href="https://wa.me/5521972548051" target="_blank" rel="noopener" data-cta="contato" class="header-cta">Fale Conosco</a>
+        <div class="header-search">
+          <i class="fa-solid fa-magnifying-glass" style="font-size:18px;color:#212121"></i>
+        </div>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu-overlay" id="menuOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <svg viewBox="0 0 104 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:28px;width:104px"
+        aria-hidden="true">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M14.4821 8.66857C14.4831 9.28507 14.3062 9.888 13.9736 10.4011C13.6411 10.9142 13.1679 11.3144 12.614 11.551C12.0601 11.7877 11.4503 11.8501 10.8618 11.7305C10.2734 11.6109 9.73263 11.3146 9.30811 10.879C8.88355 10.4435 8.59424 9.88831 8.47684 9.28379C8.35941 8.67922 8.41909 8.05245 8.6484 7.48277C8.87768 6.91313 9.26627 6.42615 9.76494 6.08351C10.2636 5.74088 10.85 5.55793 11.4499 5.55789C11.8477 5.5575 12.2418 5.63766 12.6095 5.7938C12.9772 5.94989 13.3114 6.17893 13.593 6.46779C13.8745 6.75664 14.098 7.09967 14.2505 7.47731C14.4031 7.85491 14.4818 8.25971 14.4821 8.66857ZM18.4779 13.482C19.4072 12.0585 19.9023 10.3827 19.9 8.66857C19.9 3.88069 16.1169 0 11.4499 0C6.78293 0 3 3.88069 3 8.66857C3 12.8019 5.82122 16.2577 9.59472 17.1253L4.76206 24.5474C4.73077 24.5954 4.71279 24.6514 4.71003 24.7091C4.70728 24.7669 4.71987 24.8244 4.74643 24.8753C4.77301 24.9263 4.81257 24.9689 4.86088 24.9986C4.9092 25.0282 4.96446 25.0438 5.02074 25.0437H10.9491L18.4435 13.5349C18.4542 13.5183 18.4648 13.5017 18.4755 13.4845L18.4779 13.482ZM32.7324 8.66857C32.7334 9.28507 32.5564 9.88804 32.2239 10.4011C31.8913 10.9142 31.4181 11.3144 30.8642 11.5511C30.3102 11.7877 29.7004 11.8501 29.1119 11.7305C28.5235 11.6108 27.9827 11.3145 27.5582 10.8789C27.1337 10.4433 26.8444 9.88808 26.727 9.28351C26.6097 8.67891 26.6694 8.05214 26.8988 7.4825C27.1281 6.91282 27.5168 6.42587 28.0155 6.08328C28.5142 5.74068 29.1007 5.55785 29.7006 5.55789C30.504 5.55723 31.2748 5.8846 31.8433 6.46794C32.4119 7.05132 32.7317 7.84289 32.7324 8.66857ZM36.7284 13.482C37.6573 12.0585 38.1523 10.3826 38.1499 8.66857C38.1499 3.88069 34.3672 0 29.7006 0C25.034 0 21.251 3.88069 21.251 8.66857C21.251 12.8019 24.0715 16.2577 27.8457 17.1253L23.0123 24.5474C22.9811 24.5955 22.9633 24.6514 22.9606 24.7091C22.9579 24.7668 22.9705 24.8242 22.9971 24.8752C23.0237 24.9261 23.0632 24.9687 23.1114 24.9984C23.1597 25.0281 23.2149 25.0437 23.2711 25.0437H29.2L36.6941 13.5349C36.705 13.5183 36.7155 13.5017 36.7265 13.4845L36.7284 13.482ZM55.7221 9.37479C55.7224 9.78353 55.6444 10.1883 55.4925 10.566C55.3406 10.9437 55.1176 11.287 54.8367 11.5762C54.5557 11.8654 54.2222 12.0949 53.8546 12.2516C53.4873 12.4083 53.0938 12.489 52.6961 12.4893H48.2883V6.26029H52.6961C53.499 6.26096 54.2692 6.58942 54.8367 7.1735C55.4042 7.75758 55.7228 8.54939 55.7221 9.37479ZM61.1292 9.37479C61.1292 4.58119 57.3535 0.695368 52.6961 0.695368H42.8798V25.0437H48.2883V18.0542H52.6961C57.3535 18.0542 61.1292 14.1684 61.1292 9.37479ZM73.6301 16.3522C73.6295 17.0389 73.4303 17.71 73.0585 18.2805C72.6864 18.8511 72.1582 19.2955 71.5407 19.5577C70.9231 19.8198 70.2438 19.888 69.5883 19.7534C68.9331 19.6189 68.3314 19.2877 67.8592 18.8018C67.3869 18.3159 67.0652 17.6971 66.9354 17.0234C66.8053 16.3498 66.8723 15.6517 67.1284 15.0173C67.3842 14.3829 67.8174 13.8407 68.3728 13.4592C68.9286 13.0777 69.582 12.8741 70.25 12.874C71.1472 12.8746 72.007 13.2414 72.6412 13.8937C73.2749 14.546 73.6308 15.4303 73.6301 16.3522ZM76.6558 25.0437H79.7125V7.65296H76.6558C76.556 7.65284 76.4573 7.67758 76.3689 7.725C76.2802 7.77245 76.2039 7.84117 76.147 7.92535L75.3993 9.02392C74.0872 8.04738 72.5376 7.46287 70.9224 7.33495C69.3069 7.20706 67.6886 7.5408 66.2464 8.29924C64.8042 9.05768 63.5939 10.2113 62.7499 11.6325C61.9059 13.0537 61.4606 14.6871 61.4637 16.3522C61.4637 21.3467 65.3976 25.3959 70.25 25.3959C72.1016 25.3986 73.906 24.797 75.4031 23.6778L76.147 24.7713C76.2043 24.8554 76.2802 24.9241 76.3689 24.9715C76.4576 25.0189 76.556 25.0437 76.6558 25.0437ZM100 7.65296H94.5359C94.414 7.65292 94.2949 7.68983 94.1935 7.75906C94.0916 7.82825 94.0122 7.92671 93.9649 8.04211L90.5368 16.3522L87.1097 8.04211C87.0621 7.92667 86.9827 7.82825 86.8808 7.75902C86.779 7.68983 86.6599 7.65292 86.5381 7.65296H81.0746L87.5995 23.4743L84.2653 31.556C84.2453 31.6046 84.2377 31.6574 84.2425 31.7099C84.247 31.7623 84.2646 31.8128 84.2929 31.8567C84.3212 31.9006 84.3595 31.9367 84.4047 31.9617C84.4496 31.9867 84.5004 31.9998 84.5515 32H89.9572L100 7.65296Z"
+          fill="#212121"></path>
+      </svg>
+      <button class="mobile-menu-close" id="menuClose" aria-label="Fechar menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="mobile-menu-links">
+      <a href="#">
+        <div class="link-icon"><i class="fa-solid fa-user"></i></div>Conta Remunerada
+      </a>
+      <a href="#">
+        <div class="link-icon"><i class="fa-solid fa-dollar-sign"></i></div>Emprestimo
+      </a>
+      <a href="#">
+        <div class="link-icon"><i class="fa-solid fa-mobile-screen"></i></div>Investimentos
+      </a>
+      <a href="#">
+        <div class="link-icon"><i class="fa-solid fa-circle-info"></i></div>Sobre a 99Pay
+      </a>
+    </div>
+    <div class="mobile-menu-cta">
+      <a href="https://wa.me/5521972548051" target="_blank" rel="noopener" data-cta="contato">Fale Conosco</a>
+    </div>
+  </div>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="#">Home</a> &gt; <a
+        href="#">99Pay</a> &gt; <span class="current">Oportunidade</span>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main>
+    <!-- HERO -->
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <h1 id="hero-title">Aproveite sua conta 99Pay de um <strong>jeito diferente</strong></h1>
+        <p>Descubra como gerar uma renda extra usando a conta que voce ja possui. Simples, seguro e sem complicacao.</p>
+        <a href="https://wa.me/5521972548051" target="_blank" rel="noopener" data-cta="contato" class="btn-primary hero-btn-desktop">Saiba Mais <i
+            class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-bg-layer"></div>
+        <div class="phone-frame">
+          <img src="app-screenshot.jpeg" alt="Tela do aplicativo 99Pay" width="240" height="520"
+            decoding="async">
+        </div>
+      </div>
+      <a href="https://wa.me/5521972548051" target="_blank" rel="noopener" data-cta="contato" class="btn-primary hero-btn-mobile">Saiba Mais <i
+          class="fa-solid fa-arrow-right"></i></a>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="content-section" aria-labelledby="section-steps">
+      <div class="container section-split reverse">
+        <figure class="section-img">
+          <img src="photo-1.jpeg" alt="Pessoa usando smartphone para acessar servicos financeiros"
+            width="720" height="500" loading="lazy" decoding="async">
+        </figure>
+        <div class="section-text">
+          <h2 id="section-steps">Como funciona</h2>
+          <p>Voce nao precisa de experiencia. Basta seguir o passo a passo.</p>
+          <p class="highlight">E rapido, facil e 100% digital.</p>
+          <ol class="steps-list">
+            <li class="step-card"><span class="step-icon">1</span><span class="step-label">Tenha sua conta 99Pay
+                ativa</span></li>
+            <li class="step-card"><span class="step-icon">2</span><span class="step-label">Receba as instrucoes
+                completas</span></li>
+            <li class="step-card"><span class="step-icon">3</span><span class="step-label">Acompanhe os
+                resultados</span></li>
+            <li class="step-card"><span class="step-icon">4</span><span class="step-label">Voce fica com 70% do valor
+                gerado</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEGURANCA -->
+    <section class="content-section" aria-labelledby="section-security">
+      <div class="container section-split">
+        <figure class="section-img">
+          <img src="photo-2.jpeg" alt="Representacao de seguranca digital com cadeado" width="720"
+            height="500" loading="lazy" decoding="async">
+        </figure>
+        <div class="section-text">
+          <h2 id="section-security">Sua seguranca em primeiro lugar</h2>
+          <p>Transparencia total em cada etapa. Voce mantem o controle da sua conta.</p>
+          <ul class="steps-list">
+            <li class="step-card"><span class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                </svg></span><span class="step-label">Nao pedimos sua senha nem dados de acesso</span></li>
+            <li class="step-card"><span class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                </svg></span><span class="step-label">Voce acompanha tudo em tempo real</span></li>
+            <li class="step-card"><span class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                </svg></span><span class="step-label">Processo 100% transparente</span></li>
+            <li class="step-card"><span class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                </svg></span><span class="step-label">Suporte direto para tirar duvidas</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-box">
+          <h2 id="cta-title">Quer saber como funciona?</h2>
+          <p>Fale comigo agora e descubra todos os detalhes. Sem compromisso.</p>
+          <a href="https://wa.me/5521972548051" target="_blank" rel="noopener" data-cta="contato" class="btn-primary">Saiba Mais <i
+              class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SELOS DE SEGURANCA -->
+  <div class="disclaimer container"
+    style="display:flex;flex-wrap:wrap;justify-content:center;gap:24px;align-items:center;padding-top:2rem;padding-bottom:2rem">
+    <div style="display:flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;color:var(--color-muted)">
+      <i class="fa-solid fa-shield-halved" style="font-size:1.1rem;color:var(--color-success)"></i>
+      Site Protegido SSL
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;color:var(--color-muted)">
+      <i class="fa-solid fa-lock" style="font-size:1.1rem;color:var(--color-success)"></i>
+      Dados Criptografados
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;color:var(--color-muted)">
+      <i class="fa-solid fa-circle-check" style="font-size:1.1rem;color:var(--color-success)"></i>
+      Verificado
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;color:var(--color-muted)">
+      <i class="fa-solid fa-headset" style="font-size:1.1rem;color:var(--color-success)"></i>
+      Suporte 24h
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand-col">
+        <svg width="262" height="82" viewBox="0 0 262 82" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M29.7521 25.0461C29.7545 26.4717 29.3422 27.866 28.5674 29.0525C27.7926 30.2391 26.6902 31.1645 25.3997 31.7117C24.109 32.259 22.6884 32.4034 21.3173 32.1268C19.9462 31.8502 18.6863 31.165 17.6972 30.1577C16.7081 29.1506 16.034 27.8667 15.7605 26.4688C15.4869 25.0707 15.6259 23.6213 16.1602 22.3039C16.6944 20.9866 17.5998 19.8605 18.7616 19.0681C19.9235 18.2758 21.2897 17.8527 22.6873 17.8526C24.5592 17.8508 26.355 18.6078 27.6805 19.9568C29.006 21.3059 29.7514 23.1366 29.7521 25.0461ZM39.0619 36.1771C41.227 32.8854 42.3805 29.0099 42.3751 25.0461C42.3751 13.9741 33.5609 5 22.6873 5C11.8138 5 3 13.9741 3 25.0461C3 34.6044 9.57316 42.596 18.365 44.6024L7.10542 61.7658C7.03252 61.8769 6.99061 62.0063 6.9842 62.1398C6.97779 62.2735 7.00711 62.4063 7.06901 62.5242C7.13093 62.6421 7.2231 62.7406 7.33567 62.8092C7.44824 62.8777 7.57698 62.9138 7.70811 62.9136H21.5206L38.9818 36.2995L39.0619 36.1771ZM72.2733 25.0461C72.2757 26.4717 71.8633 27.8661 71.0886 29.0526C70.3137 30.2391 69.2112 31.1646 67.9206 31.7118C66.63 32.259 65.2092 32.4035 63.8382 32.1268C62.467 31.85 61.2071 31.1647 60.218 30.1574C59.229 29.1501 58.555 27.8662 58.2815 26.4681C58.0081 25.07 58.1473 23.6206 58.6817 22.3033C59.2161 20.9859 60.1215 19.8598 61.2835 19.0676C62.4456 18.2753 63.8119 17.8525 65.2096 17.8526C67.0815 17.8511 68.8773 18.6081 70.202 19.9571C71.5267 21.3062 72.2718 23.1367 72.2733 25.0461ZM81.5837 36.1771C83.748 32.8852 84.9013 29.0098 84.8956 25.0461C84.8956 13.9741 76.0824 5 65.2098 5C54.3371 5 45.523 13.9741 45.523 25.0461C45.523 34.6044 52.0944 42.596 60.8879 44.6024L49.6266 61.7658C49.554 61.877 49.5124 62.0063 49.5061 62.1398C49.4999 62.2733 49.5293 62.406 49.5911 62.5238C49.6531 62.6417 49.7451 62.7401 49.8575 62.8088C49.97 62.8774 50.0986 62.9136 50.2296 62.9136H64.0432L81.5037 36.2995L81.5837 36.1771Z"
+            fill="#212121"></path>
+        </svg>
+        <div>
+          <p class="footer-social-label">Baixe o app</p>
+          <div class="footer-social-icons" style="margin-top:6px">
+            <a href="https://99app-pax.onelink.me/qDRG/dcwrjtqm" aria-label="Google Play"><i
+                class="fa-brands fa-google-play"></i></a>
+            <a href="https://99app-pax.onelink.me/qDRG/dcwrjtqm" aria-label="App Store"><i
+                class="fa-brands fa-apple"></i></a>
+          </div>
+        </div>
+        <div>
+          <p class="footer-social-label">Siga a 99Pay nas redes sociais</p>
+          <div class="footer-social-icons" style="margin-top:6px">
+            <a href="https://www.facebook.com/99payoficial" aria-label="Facebook"><i
+                class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/99pay/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@99pay_oficial" aria-label="YouTube"><i
+                class="fa-brands fa-youtube"></i></a>
+            <a href="https://twitter.com/99pay" aria-label="X Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <a href="https://99app.com/99pay/conta/" class="footer-btn" target="_blank" rel="noopener">Acessar a 99Pay</a>
+      </div>
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <a href="https://99app.com/99pay/">Conta Digital</a>
+          <a href="https://99app.com/99pay/beneficios/">Lucratividade</a>
+          <a href="https://99app.com/99pay/99-pix/">Pix</a>
+          <a href="https://99app.com/99pay/boleto/">Boletos</a>
+          <a href="https://99app.com/99pay/criptomoedas/">Criptomoedas</a>
+          <a href="https://www.loja99app.com.br/passageiros">Loja99</a>
+          <a href="https://99app.com/99pay/descontos/#recarga-celular">Recarga de Celular</a>
+          <a href="https://99app.com/99pay/emprestimos/">Emprestimos</a>
+        </div>
+        <div class="footer-col">
+          <a href="https://99app.com/99pay/a-99pay/">Acesse a 99Pay</a>
+          <a href="https://99app.com/99pay/taxas-e-limites/">Limites e Tarifas</a>
+          <a href="https://99app.com/99pay/seguranca#contato">Contato</a>
+          <a href="https://99app.com/99pay/duvidas-frequentes/">Duvidas Frequentes</a>
+          <a href="https://99app.com/99pay/ouvidoria/">Ouvidoria</a>
+          <a href="https://conteudos.mepoupe.com/simplificandocoma99pay">Educacao financeira</a>
+          <a href="https://99app.com/99pay/informacoes-adicionais/">Informacoes Adicionais</a>
+        </div>
+        <div class="footer-col">
+          <a href="https://www.contatoseguro.com.br/DiDi99">Etica e Compliance</a>
+          <a href="https://termos.99app.com/legal/termos/politica-de-ciberseguranca/">Politica de Ciberseguranca</a>
+          <a
+            href="https://termos.99app.com/legal/termos/politica-de-prevencao-a-lavagem-de-dinheiro-e-financiamento-do-terrorismo/">Politica
+            de Prevencao a Lavagem de Dinheiro</a>
+          <a href="https://99app.com/99pay/politicasprivacidade/">Politica de Privacidade 99Pay</a>
+          <a href="https://99app.com/99pay/termos-e-condicoes/">Termos e Condicoes 99Pay</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>99Pay Instituicao de Pagamento S.A. – CNPJ: 24.313.102/0001-25</p>
+      <p>Av. Paulista, 1921 – Bela Vista, Sao Paulo/SP, CEP 01310-924</p>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLUTUANTE -->
+  <a href="https://wa.me/5521972548051" data-cta="contato" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp"
+    target="_blank" rel="noopener">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- FLOATING CTA MOBILE -->
+  <div class="floating-cta" id="floatingCta" aria-hidden="true">
+    <a href="https://wa.me/5521972548051" target="_blank" rel="noopener" data-cta="contato">Quero participar</a>
+  </div>
+
+  <script>
+    // (log de visita e pixel Lead removidos – página visual)
+
+    // Floating CTA
+    (function () {
+      var cta = document.getElementById('floatingCta');
+      var sentinel = document.querySelector('.hero');
+      if (!cta || !sentinel || !('IntersectionObserver' in window)) return;
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting && window.innerWidth < 768) {
+            cta.classList.add('visible');
+            cta.setAttribute('aria-hidden', 'false');
+          } else {
+            cta.classList.remove('visible');
+            cta.setAttribute('aria-hidden', 'true');
+          }
+        });
+      }, { threshold: 0 });
+      observer.observe(sentinel);
+    })();
+
+    // O botão do WhatsApp aponta para /faleconosco (estático), onde o
+    // "Abrir app" usa o numero wa.me setado no painel admin.
+
+    // Mobile Menu
+    (function () {
+      var btn = document.getElementById('hamburgerBtn');
+      var menu = document.getElementById('mobileMenu');
+      var overlay = document.getElementById('menuOverlay');
+      var close = document.getElementById('menuClose');
+      function open() { menu.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+      function shut() { menu.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow = ''; }
+      btn.addEventListener('click', open);
+      close.addEventListener('click', shut);
+      overlay.addEventListener('click', shut);
+      menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', shut); });
+    })();
+  </script>
+
+
+<script>
+// Lead – dispara quando a vitima clica em qualquer CTA de contato (wa.me)
+document.addEventListener('click', function (e) {
+  var a = e.target && e.target.closest && e.target.closest('a[data-cta="contato"]');
+  if (a && typeof fbq === 'function') fbq('track', 'Lead');
+});
+</script>
+</body>
+
+</html>
